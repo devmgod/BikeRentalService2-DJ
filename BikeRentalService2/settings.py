@@ -58,6 +58,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'BikeRentalService2.urls'
 
+AUTH_USER_MODEL = "base.User" 
+
 CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
@@ -91,6 +93,14 @@ WSGI_APPLICATION = 'BikeRentalService2.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bike2', 
+        'USER': 'postgres',
+        'PASSWORD': '1',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
+    },
+    'users': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
