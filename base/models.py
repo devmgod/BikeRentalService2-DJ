@@ -37,8 +37,8 @@ class Bike(models.Model):
     class Meta:
         ordering = ['-updated', '-created']
 
-        def __str__(self):
-            return self.model
+    def __str__(self):
+        return self.model
 
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
